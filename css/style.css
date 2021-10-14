@@ -3,12 +3,138 @@
 body {
   color: #444;
   font-size: 16px;
-  font-family: 'Gentium Book Basic', serif;
+  font-family: 'Nunito', serif;
   background-color: #FFFFFF;
+}
+p {
+  margin-bottom: .67em;
+}
+nav, footer {
+  color: #273121;
+  background-color: #D81010;
+  font-family: 'Nunito', serif;
+}
+footer {
+  text-align: center;
+  padding: 1em 0 .3em 0;
+  background-color: #AA0000;
+}
+nav ul {
+  color: #FFFFFF;
+  background-color: #F81E1E;
+  list-style: none;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+}
+nav a:link, nav a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+nav a:hover, nav a:active  {
+  color: #550000;
+  text-decoration: underline;
+}
+nav a.active {
+  color: #550000;
+  text-decoration: underline;
+}
+header img {
+  width: 100%;
+  margin: 0 auto;
+}
+h1 {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-size: 72px;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+h2 {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-size: 32px;
+  color: #EE9999;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
 }
 .grid{
   display: grid;
-  
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px 400px 200px 200px 200px 300px 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "header header header header header header"
+    "banner banner banner banner banner banner"
+    "s1 s1 s1 s1 s1 s1"
+    "s2 s2 s2 s2 s2 s2"
+    "s3 s3 s3 s3 s3 s3"
+    "lm lm lm lm lm lm"
+    "pg pg pg pg pg pg"
+}
+.header{
+  grid-area: header;
+  background-color: #FF0000;
+  font-size: auto;
+  place-self: center stretch stretch;
+}
+
+.banner{
+  grid-area: banner;
+  background-color: #AA0000;
+  place-self: center stretch stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.s1{
+  grid-area: s1;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex: 1 2 auto;
+  align-items: center;
+  border-left: 10px solid #AA0000;
+  border-right: 10px solid #AA0000;
+}
+.s2{
+  grid-area: s2;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex: 1 2 auto;
+  align-items: center;
+  border-left: 10px solid #AA0000;
+  border-right: 10px solid #AA0000;
+}
+.s3{
+  grid-area: s3;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex: 1 2 auto;
+  align-items: center;
+  border-left: 10px solid #AA0000;
+  border-right: 10px solid #AA0000;
+}
+.lm{
+  grid-area: lm;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex: 1 2 auto;
+  align-items: center;
+  border-left: 10px solid #AA0000;
+  border-right: 10px solid #AA0000;
+  background-color: #EE9999;
+}
+.pg{
+  grid-area: pg;
+  text-align: center;
+  background-color: #AA0000;
 }
 a.button {
   border: 1px solid #888;
@@ -24,7 +150,7 @@ a.button {
 a.button:hover, a.button:active {
   border: 1px solid #444;
   text-decoration: none;
-  color: #222;
+  color: #FFFFFF;
 }
 @media screen and (max-width: 768px) {
   header {width: 96%;}
