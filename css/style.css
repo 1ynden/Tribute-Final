@@ -64,14 +64,11 @@ h2 {
 .grid{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 100px 400px 200px 200px 200px 300px 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "header header header header header header"
     "banner banner banner banner banner banner"
-    "s1 s1 s1 s1 s1 s1"
-    "s2 s2 s2 s2 s2 s2"
-    "s3 s3 s3 s3 s3 s3"
+    "main main main main main main"
     "lm lm lm lm lm lm"
     "pg pg pg pg pg pg"
 }
@@ -81,45 +78,50 @@ h2 {
   font-size: auto;
   place-self: center stretch stretch;
 }
-
 .banner{
   grid-area: banner;
+  height: 400px;
   background-color: #AA0000;
   place-self: center stretch stretch;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.s1{
-  grid-area: s1;
-  text-align: center;
-  padding: 1em;
-  display: flex;
-  flex: 1 2 auto;
-  align-items: center;
-  border-left: 10px solid #AA0000;
-  border-right: 10px solid #AA0000;
+.main{
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-areas:
+    ". . ."
+    "t1 i1 i1"
+    ". . ."
 }
-.s2{
-  grid-area: s2;
-  text-align: center;
-  padding: 1em;
-  display: flex;
-  flex: 1 2 auto;
-  align-items: center;
-  border-left: 10px solid #AA0000;
-  border-right: 10px solid #AA0000;
+.main img{
+  grid-column: span 2;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
 }
-.s3{
-  grid-area: s3;
-  text-align: center;
-  padding: 1em;
-  display: flex;
-  flex: 1 2 auto;
-  align-items: center;
-  border-left: 10px solid #AA0000;
-  border-right: 10px solid #AA0000;
+.main p{
+  margin: auto;
+  padding: 20px;
 }
+.main strong{
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+}
+.main .i1{
+  grid-area: i1;
+}
+.main .t1{
+  grid-area: t1;
+  text-align: right;
+}
+
 .lm{
   grid-area: lm;
   text-align: center;
@@ -152,7 +154,24 @@ a.button:hover, a.button:active {
   text-decoration: none;
   color: #FFFFFF;
 }
-@media screen and (max-width: 768px) {
-  header {width: 96%;}
-  article {width: 96%;}
+@media (max-width: 768px) {
+  nav ul{
+    font-size: 16px;
+  }
+  .banner{
+    height: 200px;
+  }
+  .main{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "."
+      "."
+      "i1"
+      "t1"
+      "."
+      "."
+  }
+  .main img{
+    grid-column: span 1;
+  }
 }
