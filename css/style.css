@@ -126,12 +126,29 @@ h2 {
   grid-area: lm;
   text-align: center;
   padding: 1em;
-  display: flex;
-  flex: 1 2 auto;
+  color: #FFFFFF;
+  background-color: #AF4C50;
+  border-top: 2px solid #BAA;
+}
+.lm .grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: left;
+  padding-bottom: 1em;
+}
+.lm ul{
+  list-style: circle;
   align-items: center;
-  border-left: 10px solid #AA0000;
-  border-right: 10px solid #AA0000;
-  background-color: #EE9999;
+  margin: auto auto auto auto;
+}
+.lm a:link, .lm a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.lm a:hover, .lm a:active  {
+  color: #550000;
+  text-decoration: underline;
+  font-size: 24px;
 }
 .pg{
   grid-area: pg;
@@ -154,7 +171,7 @@ a.button:hover, a.button:active {
   text-decoration: none;
   color: #FFFFFF;
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   nav ul{
     font-size: 16px;
   }
@@ -173,5 +190,12 @@ a.button:hover, a.button:active {
   }
   .main img{
     grid-column: span 1;
+  }
+  .lm .grid{
+    grid-template-columns: 1fr;
+    grid-row-gap: 1em;
+    grid-template-areas:
+      "."
+      "."
   }
 }
